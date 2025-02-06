@@ -1,15 +1,15 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const MenuItem = require('schema.js');
+const MenuItem = require('./schema.js');
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-
+const DB_URL="mongodb+srv://hrenikindi:eshop123@cluster0.68taj.mongodb.net/"
 mongoose
-  .connect("atlas url", {
+  .connect(DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
